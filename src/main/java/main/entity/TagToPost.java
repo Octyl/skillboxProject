@@ -9,8 +9,10 @@ public class TagToPost
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
+    @Column(name = "post_id")
     private int postId;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "post_id")
+    @Column(name = "tag_id")
     private int tagId;
 }

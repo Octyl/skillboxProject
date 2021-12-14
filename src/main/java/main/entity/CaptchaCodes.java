@@ -1,9 +1,6 @@
 package main.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "captcha_codes")
@@ -13,10 +10,13 @@ public class CaptchaCodes
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
+    @Column(name = "time")
     private Date time;
 
+    @Column(name = "code")
     private String code;
 
+    @Column(name = "secret_code")
     private String secretCode;
 
 }

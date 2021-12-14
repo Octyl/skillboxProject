@@ -10,13 +10,17 @@ public class PostVotes
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
-    @OneToMany
+    @ManyToOne()
+    @Column(name = "user_id")
     private int userId;
 
     @OneToOne
+    @Column(name = "post_id")
     private int postId;
 
+    @Column(name = "time")
     private Date time;
 
-    private int value;
+    @Column(name = "value")
+    private short value;
 }

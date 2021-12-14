@@ -1,30 +1,40 @@
 package main.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "users")
+@Getter
+@Setter
 public class Users
 {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "is_moderator")
     private short isModerator;
 
+    @Column(name = "reg_time")
     private Date regTime;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "code")
     private String code;
 
+    @Column(name = "photo")
     private String photo;
 
 }
