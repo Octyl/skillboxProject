@@ -13,9 +13,13 @@ public class PostComments
     @Column(name = "parent_id")
     private int parentId;
 
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id")
     @Column(name = "post_id")
     private int postId;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id")
     @Column(name = "user_id")
     private int userId;
 

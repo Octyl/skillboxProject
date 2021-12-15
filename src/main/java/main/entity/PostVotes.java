@@ -10,8 +10,8 @@ public class PostVotes
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
-    @ManyToOne()
-    @Column(name = "user_id")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id")
     private int userId;
 
     @OneToOne

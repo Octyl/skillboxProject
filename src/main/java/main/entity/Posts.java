@@ -19,7 +19,8 @@ public class Posts
     @Column(name = "moderator_id")
     private int moderatorId;
 
-    @OneToOne(mappedBy = "user_id")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id")
     @Column(name = "user_id")
     private int userId;
 
