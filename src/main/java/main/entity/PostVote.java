@@ -4,10 +4,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "post_votes")
-public class PostVotes
-{
+public class PostVote {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

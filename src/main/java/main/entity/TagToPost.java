@@ -3,10 +3,9 @@ package main.entity;
 import javax.persistence.*;
 
 @Entity(name = "tag2post")
-public class TagToPost
-{
+public class TagToPost {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

@@ -1,7 +1,6 @@
 package main.entity.enums;
 
-public enum ModerationStatus
-{
+public enum ModerationStatus {
     NEW,
     ACCEPTED,
     DECLINED

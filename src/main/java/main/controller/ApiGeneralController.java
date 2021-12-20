@@ -1,5 +1,4 @@
 package main.controller;
 
-public class ApiGeneralController
-{
+public class ApiGeneralController {
 }

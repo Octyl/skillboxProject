@@ -3,8 +3,7 @@ package main.entity;
 import javax.persistence.*;
 
 @Entity(name = "global_settings")
-public class GlobalSettings
-{
+public class GlobalSettings {
     @Column(name = "MULTIUSER_MODE")
     private boolean multiUserMode;
 

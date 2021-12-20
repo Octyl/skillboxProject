@@ -9,10 +9,9 @@ import java.util.Date;
 @Entity(name = "users")
 @Getter
 @Setter
-public class Users
-{
+public class User {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Enumerated(EnumType.STRING)

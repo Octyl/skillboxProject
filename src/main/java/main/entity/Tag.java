@@ -3,10 +3,9 @@ package main.entity;
 import javax.persistence.*;
 
 @Entity(name = "tags")
-public class Tags
-{
+public class Tag {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "name")

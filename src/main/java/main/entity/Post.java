@@ -1,22 +1,23 @@
 package main.entity;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "post_comments")
-public class PostComments
+@Entity(name = "posts")
+public class Post
 {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
-    @Column(name = "parent_id")
-    private int parentId;
+    @Column(name = "is_active")
+    private short isActive;
 
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "user_id")
-    @Column(name = "post_id")
-    private int postId;
+    @OneToOne
+    @Column(name = "moderator_id")
+    private int moderatorId;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id")
@@ -26,6 +27,12 @@ public class PostComments
     @Column(name = "time")
     private Date time;
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "text")
     private String text;
+
+    @Column(name = "view_count")
+    private int viewCount;
 }

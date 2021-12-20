@@ -4,10 +4,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "captcha_codes")
-public class CaptchaCodes
-{
+public class CaptchaCode {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "time")
