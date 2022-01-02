@@ -1,7 +1,10 @@
 package main.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity(name = "global_settings")
 public class GlobalSettings {
     @Column(name = "MULTIUSER_MODE")

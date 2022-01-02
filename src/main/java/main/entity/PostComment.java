@@ -1,8 +1,11 @@
 package main.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
 @Entity(name = "post_comments")
 public class PostComment {
     @Id

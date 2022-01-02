@@ -1,7 +1,10 @@
 package main.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity(name = "tag2post")
 public class TagToPost {
     @Id

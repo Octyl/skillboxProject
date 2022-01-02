@@ -1,10 +1,11 @@
 package main.entity;
 
-import org.springframework.lang.Nullable;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
 @Entity(name = "posts")
 public class Post
 {
