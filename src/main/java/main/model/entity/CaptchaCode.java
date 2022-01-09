@@ -1,12 +1,17 @@
-package main.entity;
+package main.model.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Data
-@Entity(name = "captcha_codes")
+
+@Entity
+@Table(name = "captcha_codes")
+@Getter
+@Setter
 public class CaptchaCode {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

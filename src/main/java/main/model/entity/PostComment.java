@@ -1,12 +1,16 @@
-package main.entity;
+package main.model.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Data
-@Entity(name = "post_comments")
+@Entity
+@Table(name = "post_comments")
+@Getter
+@Setter
 public class PostComment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,14 +20,10 @@ public class PostComment {
     private int parentId;
 
     @OneToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "user_id")
-    @Column(name = "post_id")
-    private int postId;
+    private Post postId;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "user_id")
-    @Column(name = "user_id")
-    private int userId;
+    private User userId;
 
     @Column(name = "time")
     private Date time;

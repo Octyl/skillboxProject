@@ -1,12 +1,17 @@
-package main.entity;
+package main.model.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
-@Data
-@Entity(name = "posts")
+@Entity
+@Table(name = "posts")
+@Getter
+@Setter
 public class Post
 {
     @Id
@@ -16,14 +21,13 @@ public class Post
     @Column(name = "is_active")
     private short isActive;
 
-    @OneToOne
-    @Column(name = "moderator_id")
-    private int moderatorId;
+//    @OneToOne
+//    @JoinColumn(name = "user_id")
+//    private User moderatorId;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @OneToOne
     @JoinColumn(name = "user_id")
-    @Column(name = "user_id")
-    private int userId;
+    private User authorId;
 
     @Column(name = "time")
     private Date time;

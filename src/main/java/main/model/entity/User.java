@@ -1,14 +1,14 @@
-package main.entity;
+package main.model.entity;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import main.model.entity.enums.ModerationStatus;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Data
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 @Getter
 @Setter
 public class User {
@@ -17,8 +17,8 @@ public class User {
     private int id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "is_moderator")
-    private short isModerator;
+    @Column(name = "is_moderator", columnDefinition = "enum")
+    private ModerationStatus isModerator;
 
     @Column(name = "reg_time")
     private Date regTime;
