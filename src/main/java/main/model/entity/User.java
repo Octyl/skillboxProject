@@ -16,9 +16,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "is_moderator", columnDefinition = "enum")
-    private ModerationStatus isModerator;
+    @Column(name = "is_moderator")
+    private boolean isModerator;
 
     @Column(name = "reg_time")
     private Date regTime;
